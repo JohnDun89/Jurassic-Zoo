@@ -28,4 +28,13 @@ describe('pen', function(){
     assert.strictEqual(angryOnes.penCount.length,1);
   });
 
+  it('should be able to count all dinosaurs with an off spring count of more than two', function(){
+    angryOnes = new Pen();
+    velociraptor = new Dinosaur('velociraptor',3);
+    kauiju = new Dinosaur('Kauiju',1);
+    angryOnes.addDino(velociraptor);
+    angryOnes.addDino(velociraptor);
+    angryOnes.addDino(kauiju);
+    assert.strictEqual(angryOnes.getOffSpringProducers,2);
+  });
 });
